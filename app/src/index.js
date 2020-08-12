@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "./index.less"
+import "./index.scss"
 
-ReactDOM.render(<div>hhs</div>, document.getElementById("root"))
+ReactDOM.render(<div>hhhw</div>, document.getElementById("root"))
