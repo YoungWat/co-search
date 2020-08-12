@@ -9,6 +9,7 @@ module.exports = {
         hostPre: item.hostPre,
         selectorMap: item.selectorMap,
         size,
+        logo: item.logo,
         parserPlugin: item.parserPlugin,
       })
     })

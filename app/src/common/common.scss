@@ -1,0 +1,19 @@
+@mixin margin-center {
+  margin: 0 auto;
+}
+@mixin w($width) {
+  width: $width+px;
+}
+
+@mixin h($height) {
+  height: $height+px;
+}
+
+@mixin sqr($side) {
+  @include w($side);
+  @include h($side);
+}
+
+@mixin img-bg($url) {
+  background: url($url) center/100% no-repeat;
+}

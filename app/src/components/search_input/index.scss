@@ -1,0 +1,88 @@
+@import "../../common/common.scss";
+
+.search-input {
+  @include margin-center;
+
+  margin-top: 200px;
+  width: 800px;
+  text-align: center;
+
+  .logo-outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
+    @include sqr(60);
+    @include img-bg("../img/search-logo.png");
+    display: inline-block;
+    margin-top: 16px;
+    margin-left: 10px;
+  }
+
+  .logo-text{
+    font-size: 80px;
+  }
+
+  .input-outer {
+    $br: 10px;
+    $height: 45px;
+    $width:500px;
+
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input {
+      border: 2px solid #c4c7ce;
+      border-top-left-radius: $br;
+      border-bottom-left-radius: $br;
+      outline: 0;
+      height: $height;
+      line-height: $height;
+      width: $width;
+      box-sizing: border-box;
+      border-right: 0;
+      padding-left: 15px;
+      font-size: 18px;
+      &:hover {
+        border-color: #999;
+      }
+      &:focus {
+        border-color: #4e6ef2;
+      }
+    }
+    button {
+      background: #4e6ef2;
+      color: #fff;
+      border-top-right-radius: $br;
+      border-bottom-right-radius: $br;
+      height: $height;
+      line-height: $height;
+      width: 120px;
+      font-size: 18px;
+      &:hover {
+        cursor: pointer;
+        background: #4662d9;
+      }
+    }
+  }
+
+  &-top{
+    margin-top:10px;
+    display: flex;
+    .logo{
+      margin:0;
+      @include sqr(40);
+      margin-right:15px;
+    }
+    .logo-text{
+      display: none;
+    }
+    .input-outer{
+      margin-top:0;
+    }
+  }
+}

@@ -32,7 +32,7 @@ const parseHtml = ({
 }
 
 module.exports = {
-  parse({ url, hostPre, selectorMap, size, parserPlugin }) {
+  parse({ url, hostPre, selectorMap, size, parserPlugin, logo }) {
     return new Promise((resolve, reject) => {
       // const url = `https://www.ixigua.com/search/${q}`
       request(
@@ -58,10 +58,10 @@ module.exports = {
             })
             const key = url.replace(/http[s]?:\/\/[\w]+\.([^\.]+)\..*/, "$1")
             resolve({
-              [key]: {
-                url,
-                list,
-              },
+              key,
+              url,
+              logo,
+              list,
             })
           }
         }

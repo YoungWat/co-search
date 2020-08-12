@@ -4,6 +4,7 @@ const { port } = require("./config")
 const generator = require("./generator")
 
 app.get("/video", async (req, res) => {
+  res.header('Access-Control-Allow-Origin', '*');
   const encodedQ = encodeURI(req.query.q)
 
   const json = await Promise.all(generator.generate(encodedQ, req.query.size))
