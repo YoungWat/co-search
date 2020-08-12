@@ -1,10 +1,14 @@
 const express = require("express")
 const app = express()
 const { port } = require("./config")
-const xigua = require("./video/xigua")
+const generator = require("./generator")
 
 app.get("/video", async (req, res) => {
-  res.json(await xigua(encodeURI(req.query.q)))
+  const encodedQ = encodeURI(req.query.q)
+
+  const json = await Promise.all(generator.generate(encodedQ, req.query.size))
+
+  res.json(json)
 })
 
 app.listen(port, () => {
