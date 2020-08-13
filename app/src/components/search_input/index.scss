@@ -15,7 +15,7 @@
 
   .logo {
     @include sqr(60);
-    @include img-bg("../img/search-logo.png");
+    @include img-bg("search-logo.png");
     display: inline-block;
     margin-top: 16px;
     margin-left: 10px;

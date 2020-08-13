@@ -2,11 +2,11 @@
   margin: 0 auto;
 }
 @mixin w($width) {
-  width: $width+px;
+  width: $width + px;
 }
 
 @mixin h($height) {
-  height: $height+px;
+  height: $height + px;
 }
 
 @mixin sqr($side) {
@@ -15,5 +15,9 @@
 }
 
 @mixin img-bg($url) {
-  background: url($url) center/100% no-repeat;
+  background: url("../img/" + $url) center/100% no-repeat;
+}
+
+@mixin fz($size) {
+  font-size: $size + px;
 }

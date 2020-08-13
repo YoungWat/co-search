@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo, useEffect } from "react"
 import cn from "classnames"
 
 import "./index.scss"
@@ -10,6 +10,13 @@ const SerachInput = ({ type = "0", value = "", onInput, onSearch }) => {
 
   const clickHandler = () => {
     onSearch && onSearch(value)
+  }
+
+  const keyDownHandler = (e) => {
+    // 回车
+    if (e.keyCode === 13) {
+      onSearch(value)
+    }
   }
 
   // type-0 未搜索居中 ,type-1，已搜索，顶部
@@ -29,6 +36,7 @@ const SerachInput = ({ type = "0", value = "", onInput, onSearch }) => {
           value={value}
           onInput={inputHandler}
           onChange={inputHandler}
+          onKeyDown={keyDownHandler}
         />
         <button onClick={clickHandler}>搜索</button>
       </div>
@@ -36,4 +44,4 @@ const SerachInput = ({ type = "0", value = "", onInput, onSearch }) => {
   )
 }
 
-export default SerachInput
+export default memo(SerachInput)

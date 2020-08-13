@@ -1,1 +1,12 @@
-@import "./common/reset.scss"
+@import "./common/reset.scss";
+@import "./common/common.scss";
+
+.search-list-outer {
+  width: 980px;
+  @include margin-center;
+}
+
+.search-list {
+  display: flex;
+  flex-wrap: wrap;
+}

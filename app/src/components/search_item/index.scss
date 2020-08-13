@@ -1,0 +1,77 @@
+@import "../../common/common.scss";
+
+.search-item {
+  @include fz(12);
+  @include w(180);
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right:10px;
+  margin-bottom:20px;
+
+  .red{
+    color:#FF142B;
+  }
+
+  .img-outer {
+    @include h(100);
+    
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    &:hover{
+      cursor: pointer;
+    }
+    img {
+      width: 100%;
+      @include h(100);
+    }
+    .duration {
+      @include fz(12);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+  }
+  .text {
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+
+  .title {
+    @include h(37);
+    overflow: hidden;
+    cursor: pointer;
+    &:hover{
+      color:#5b76e4;
+    }
+  }
+  .watch-count i,
+  .time i {
+    @include sqr(16);
+    display: inline-block;
+  }
+  .watch-count {
+    display: flex;
+    i {
+      @include img-bg("play.png");
+    }
+  }
+  .time {
+    display: flex;
+    i {
+      @include img-bg("time.png");
+    }
+  }
+  .watch-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    margin-top: 5px;
+  }
+}

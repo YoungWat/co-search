@@ -11,20 +11,32 @@ const parseHtml = ({
   parserPlugin = () => {},
 }) => {
   const $ = cheerio.load(html)
-  const { itemsContainer, title, img, time, watchCount, link } = selectorMap
+  const {
+    itemsContainer,
+    title,
+    img,
+    time,
+    watchCount,
+    link,
+    duration,
+  } = selectorMap
   const res = []
 
   $(itemsContainer)
     .slice(0, size)
     .each((index, item) => {
       item = $(item)
-      res.push({
+      const ori = {
         title: item.find(title).text().trim(),
         img: item.find(img).attr("src"),
         time: item.find(time).text().trim(),
-        watchCount: item.find(watchCount).text().trim(),
+        watchCount: item.find(watchCount).text().trim() || "",
         link: hostPre + item.find(link).attr("href"),
-        ...parserPlugin(html, index, item.find(img).attr("src")),
+        duration: item.find(duration).text().trim(),
+      }
+      res.push({
+        ...ori,
+        ...parserPlugin(html, index, ori),
       })
     })
 
